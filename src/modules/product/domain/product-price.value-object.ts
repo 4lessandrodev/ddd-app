@@ -9,9 +9,8 @@ export class ProductPrice extends ValueObject<PriceProps>{
 		super(props);
 	}
 
-	validation(_: 'value', value: number): boolean {
-		const { number } = this.validator;
-		return number(value).isPositive();
+	validation(value: number): boolean {
+		return ProductPrice.isValidProps({ value });
 	}
 
 	public static isValidProps({ value }: PriceProps): boolean {

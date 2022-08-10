@@ -17,7 +17,7 @@ describe('update-product.use-case', () => {
 	});
 
 	it('should return fails if provide an invalid price value', async () => {
-
+		jest.spyOn(productRepositoryMock, 'getProductById').mockResolvedValueOnce({ id: 'valid' } as any);
 		const saveSpy = jest.spyOn(productRepositoryMock, 'create');
 
 		const invalidPriceValue = -10;

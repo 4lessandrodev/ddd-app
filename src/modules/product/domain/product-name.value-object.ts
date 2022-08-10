@@ -9,9 +9,8 @@ export class ProductName extends ValueObject<NameProps>{
 		super(props);
 	}
 
-	validation(_: 'value', value: string): boolean {
-		const { string } = this.validator;
-		return string(value).hasLengthBetween(3, 30);
+	validation(value: string): boolean {
+		return ProductName.isValidProps({ value })
 	}
 
 	public static isValidProps({ value }: NameProps): boolean {

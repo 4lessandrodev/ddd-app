@@ -6,7 +6,7 @@ App built using `types-ddd` v3 [Link Here](https://www.npmjs.com/package/types-d
 
 A minimum project to test the domain driven design lib
 
-![](docs/tests.png)
+![](docs/tests-result.png)
 
 ### How to run this app
 
@@ -40,7 +40,7 @@ $ yarn dev
 
 # List products 
 
-GET http://localhost:3000/products
+$ curl http://localhost:3000/products | jq '.'
 
 ```
 
@@ -48,8 +48,9 @@ GET http://localhost:3000/products
 
 # Create Product
 
-POST http://localhost:3000/products
---data { name: "product name", price: 28.20 }
+$ curl -X POST -H "Content-Type: application/json" \
+-d '{ "name": "valid name", "price": 21.00 }' \
+http://localhost:3000/products | jq '.'
 
 ```
 
@@ -57,7 +58,9 @@ POST http://localhost:3000/products
 
 # Update Product
 
-PUT http://localhost:3000/products/:id
---data { name: "new name", price: 42.00 }
+$ curl -X PUT -H "Content-Type: application/json" \
+-d '{ "name": "new name", "price": 42.00 }' \
+http://localhost:3000/products/:id | jq '.'
+
 
 ```
