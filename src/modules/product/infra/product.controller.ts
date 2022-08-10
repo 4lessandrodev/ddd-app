@@ -11,15 +11,15 @@ export const ProductController = {
 
 	GetProductById: route.post('/products', async (req: Request, res: Response) => {
 		const { name = '', price = 0 } = req.body;
-		const result = await createProductUseCase.execute({ nameValue: name, priceValue: price });
-		return res.json({ success: result.isOk() });
+		const result = await createProductUseCase.execute({ name: name, price: price });
+		return res.json({ success: result.isOk(), message: result.error() });
 	}),
 
 	UpdateProduct: route.put('/products/:id', async (req: Request, res: Response) => {
 		const { id = '' } = req['params'];
-		const { name = '', price = 0 } = req.body;
+		const { name, price } = req.body;
 		const result = await updateProductUseCase.execute({ id, name, price });
-		return res.json({ success: result.isOk() });
+		return res.json({ success: result.isOk(), message: result.error() });
 	}),
 
 }

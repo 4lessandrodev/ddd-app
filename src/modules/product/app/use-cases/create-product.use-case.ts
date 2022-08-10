@@ -6,8 +6,8 @@ import ProductPrice, { PriceProps } from "@product/domain/product-price.value-ob
 import ProductRepositoryInterface from "@product/domain/repository.interface";
 
 export interface CreateProductDto {
-	nameValue: string;
-	priceValue: number;
+	name: string;
+	price: number;
 }
 
 export class CreateProductUseCase implements IUseCase<CreateProductDto, Result<void>>{
@@ -17,12 +17,12 @@ export class CreateProductUseCase implements IUseCase<CreateProductDto, Result<v
 		private readonly event: IHandle<Product>
 	) { }
 
-	async execute({ nameValue, priceValue }: CreateProductDto): Promise<Result<void>> {
+	async execute(dto: CreateProductDto): Promise<Result<void>> {
 		try {
 
 			const { data, result } = ValueObject.createMany([
-				Class<PriceProps>(ProductPrice, { value: priceValue }),
-				Class<NameProps>(ProductName, { value: nameValue })
+				Class<PriceProps>(ProductPrice, { value: dto.price }),
+				Class<NameProps>(ProductName, { value: dto.name })
 			])
 
 			if (result.isFail()) return Result.fail(result.error());

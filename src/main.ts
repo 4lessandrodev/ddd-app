@@ -1,5 +1,5 @@
-import 'module-alias/register';
 import 'reflect-metadata';
+import 'module-alias/register';
 import { ProductModule } from "./modules/product/infra/product.module";
 import { Server } from "./server";
 

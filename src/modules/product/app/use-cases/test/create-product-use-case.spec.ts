@@ -12,7 +12,7 @@ describe('create-product.use-case', () => {
 		const saveSpy = jest.spyOn(productRepositoryMock, 'create');
 
 		const invalidNameValue = '';
-		const dto: CreateProductDto = { nameValue: invalidNameValue, priceValue: 180.20 };
+		const dto: CreateProductDto = { name: invalidNameValue, price: 180.20 };
 		
 		const result = await useCase.execute(dto);
 		expect(result.isFail()).toBeTruthy();
@@ -24,7 +24,7 @@ describe('create-product.use-case', () => {
 		const saveSpy = jest.spyOn(productRepositoryMock, 'create');
 
 		const invalidPriceValue = -10;
-		const dto: CreateProductDto = { nameValue: 'valid value', priceValue: invalidPriceValue };
+		const dto: CreateProductDto = { name: 'valid value', price: invalidPriceValue };
 		
 		const result = await useCase.execute(dto);
 		expect(result.isFail()).toBeTruthy();
@@ -38,7 +38,7 @@ describe('create-product.use-case', () => {
 			throw new Error("something went wrong");
 		});
 		
-		const dto: CreateProductDto = { nameValue: 'valid value', priceValue: 10 };
+		const dto: CreateProductDto = { name: 'valid value', price: 10 };
 		
 		const result = await useCase.execute(dto);
 		expect(result.isFail()).toBeTruthy();
@@ -49,7 +49,7 @@ describe('create-product.use-case', () => {
 
 		const saveSpy = jest.spyOn(productRepositoryMock, 'create');
 
-		const dto: CreateProductDto = { nameValue: 'valid name', priceValue: 180.20 };
+		const dto: CreateProductDto = { name: 'valid name', price: 180.20 };
 		
 		const result = await useCase.execute(dto);
 		

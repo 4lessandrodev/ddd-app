@@ -7,7 +7,8 @@
     "dev": "ts-node-dev -r tsconfig-paths/register ./src/main.ts",
     "test": "jest --runInBand",
     "build": "tsc",
-    "test:e2e": "jest --runInBand -c ./jest.e2e.config.ts"
+    "test:e2e": "jest --runInBand -c ./jest.e2e.config.ts",
+    "start": "node ./dist/src/main"
   },
   "dependencies": {
     "body-parser": "^1.20.0",
@@ -30,7 +31,7 @@
     "typescript": "^4.7.4"
   },
   "_moduleAliases": {
-    "@types": "./src/types/index",
-    "@product/*": "./src/modules/product/*"
+    "@types": "./dist/types/index",
+    "@product": "./dist/src/modules/product"
   }
 }

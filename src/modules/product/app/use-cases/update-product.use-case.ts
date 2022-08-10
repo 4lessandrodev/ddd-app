@@ -26,14 +26,14 @@ export class UpdateProductUseCase implements IUseCase<UpdateProductDto, Result<v
 				Class<NameProps>(ProductName, { value: dto.name }),
 				Class<PriceProps>(ProductPrice, { value: dto.price })
 			]);
-
+			
 			if (result.isFail()) return Result.fail(result.error());
 
-			const productName = data.next().value() as ProductName;
-			const productPrice = data.next().value() as ProductPrice;
+			const name = data.next().value() as ProductName;
+			const price = data.next().value() as ProductPrice;
 				
-			product.set('name').to(productName);
-			product.set('price').to(productPrice);
+			product.set('name').to(name);
+			product.set('price').to(price);
 
 			await this.repo.update(product);
 
