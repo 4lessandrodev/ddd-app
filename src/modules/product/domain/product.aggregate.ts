@@ -1,4 +1,4 @@
-import { Aggregate, IResult, Result, UID } from "types-ddd";
+import { Aggregate, Ok, Result, UID } from "types-ddd";
 import ProductName from "./product-name.value-object";
 import ProductPrice from "./product-price.value-object";
 
@@ -15,8 +15,8 @@ export class Product extends Aggregate<ProductProps>{
 		super(props);
 	}
 
-	public static create(props: ProductProps): IResult<Product> {
-		return Result.Ok(new Product(props));
+	public static create(props: ProductProps): Result<Product> {
+		return Ok(new Product(props));
 	}
 }
 

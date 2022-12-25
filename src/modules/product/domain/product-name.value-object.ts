@@ -15,7 +15,7 @@ export class ProductName extends ValueObject<NameProps>{
 
 	public static isValidProps({ value }: NameProps): boolean {
 		const { string } = this.validator;
-		return string(value).hasLengthBetween(3, 30);
+		return string(value).hasLengthBetweenOrEqual(3, 30);
 	}
 
 	public static create(props: NameProps): IResult<ProductName> {

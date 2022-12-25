@@ -1,5 +1,5 @@
 import ProductToDomainAdapter from "@product/domain/product-to-domain.adapter";
-import { ProductDb } from "@product/domain/repository.interface";
+import { ProductModel } from "@product/domain/repository.interface";
 import UpdateProductUseCase, { UpdateProductDto } from "../update-product.use-case"
 import productRepositoryMock from "./product-repository.mock"
 
@@ -44,7 +44,7 @@ describe('update-product.use-case', () => {
 		const adapter = new ProductToDomainAdapter();
 		const date = new Date('2022-01-01 01:00:00')
 		
-		const data: ProductDb = {
+		const data: ProductModel = {
 			id: 'valid_id',
 			name: 'valid_name',
 			price: 200,
@@ -74,7 +74,7 @@ describe('update-product.use-case', () => {
 		const adapter = new ProductToDomainAdapter();
 		const date = new Date('2022-01-01 01:00:00')
 		
-		const data: ProductDb = {
+		const data: ProductModel = {
 			id: 'valid_id',
 			name: 'valid_name',
 			price: 200,

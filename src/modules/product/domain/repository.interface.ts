@@ -1,6 +1,6 @@
 import Product from "./product.aggregate";
 
-export class ProductDb {
+export class ProductModel {
 	id!: string;
 	name!: string;
 	price!: number;
@@ -10,7 +10,7 @@ export class ProductDb {
 
 export interface ProductRepositoryInterface {
 	create(product: Product): Promise<void>;
-	getProducts(): Promise<ProductDb[]>;
+	getProducts(): Promise<ProductModel[]>;
 	getProductById(id: string): Promise<Product | null>;
 	update(product: Product): Promise<void>;
 }

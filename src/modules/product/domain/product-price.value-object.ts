@@ -1,4 +1,4 @@
-import { IResult, Result, ValueObject } from "types-ddd";
+import { Fail, IResult, Result, ValueObject } from "types-ddd";
 
 export interface PriceProps {
 	value: number;
@@ -6,11 +6,7 @@ export interface PriceProps {
 
 export class ProductPrice extends ValueObject<PriceProps>{
 	private constructor(props: PriceProps) {
-		super(props);
-	}
-
-	validation(value: number): boolean {
-		return ProductPrice.isValidProps({ value });
+		super(props, { disableSetters: true });
 	}
 
 	public static isValidProps({ value }: PriceProps): boolean {
@@ -21,7 +17,7 @@ export class ProductPrice extends ValueObject<PriceProps>{
 	public static create(props: PriceProps): IResult<ProductPrice> {
 		const message = 'value must be positive';
 
-		if (!this.isValidProps(props)) return Result.fail(message);
+		if (!this.isValidProps(props)) return Fail(message);
 
 		return Result.Ok(new ProductPrice(props));
 	}

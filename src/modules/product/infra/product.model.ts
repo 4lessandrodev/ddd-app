@@ -1,6 +1,6 @@
-import { ProductDb } from "@product/domain/repository.interface";
+import { ProductModel as Model } from "@product/domain/repository.interface";
 
-export class ProductModel implements ProductDb {
+export class ProductModel implements Model {
 	id!: string;
 	name!: string;
 	price!: number;

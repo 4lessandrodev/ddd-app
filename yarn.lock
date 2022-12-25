@@ -1509,10 +1509,10 @@ express@^4.18.1:
     utils-merge "1.0.1"
     vary "~1.1.2"
 
-fast-copy@^2.1.1:
-  version "2.1.7"
-  resolved "https://registry.yarnpkg.com/fast-copy/-/fast-copy-2.1.7.tgz#affc9475cb4b555fb488572b2a44231d0c9fa39e"
-  integrity sha512-ozrGwyuCTAy7YgFCua8rmqmytECYk/JYAMXcswOcm0qvGoE3tPb7ivBeIHTOK2DiapBhDZgacIhzhQIKU5TCfA==
+fast-copy@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/fast-copy/-/fast-copy-3.0.0.tgz#875ebf33b13948ae012b6e51d33da5e6e7571ab8"
+  integrity sha512-4HzS+9pQ5Yxtv13Lhs1Z1unMXamBdn5nA4bEi1abYpDNSpSp7ODYQ1KPMF6nTatfEzgH6/zPvXKU1zvHiUjWlA==
 
 fast-json-stable-stringify@2.x, fast-json-stable-stringify@^2.0.0:
   version "2.1.0"
@@ -2648,14 +2648,14 @@ pino-abstract-transport@^1.0.0, pino-abstract-transport@v1.0.0:
     readable-stream "^4.0.0"
     split2 "^4.0.0"
 
-pino-pretty@^9.0.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/pino-pretty/-/pino-pretty-9.1.0.tgz#162f525944d7eede154db8055cb0ab5e00bde0c4"
-  integrity sha512-IM6NY9LLo/dVgY7/prJhCh4rAJukafdt0ibxeNOWc2fxKMyTk90SOB9Ao2HfbtShT9QPeP0ePpJktksMhSQMYA==
+pino-pretty@^9.1.1:
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/pino-pretty/-/pino-pretty-9.1.1.tgz#e7d64c1db98266ca428ab56567b844ba780cd0e1"
+  integrity sha512-iJrnjgR4FWQIXZkUF48oNgoRI9BpyMhaEmihonHeCnZ6F50ZHAS4YGfGBT/ZVNsPmd+hzkIPGzjKdY08+/yAXw==
   dependencies:
     colorette "^2.0.7"
     dateformat "^4.6.3"
-    fast-copy "^2.1.1"
+    fast-copy "^3.0.0"
     fast-safe-stringify "^2.1.1"
     help-me "^4.0.1"
     joycon "^3.1.1"
@@ -2673,10 +2673,10 @@ pino-std-serializers@^6.0.0:
   resolved "https://registry.yarnpkg.com/pino-std-serializers/-/pino-std-serializers-6.0.0.tgz#4c20928a1bafca122fdc2a7a4a171ca1c5f9c526"
   integrity sha512-mMMOwSKrmyl+Y12Ri2xhH1lbzQxwwpuru9VjyJpgFIH4asSj88F2csdMwN6+M5g1Ll4rmsYghHLQJw81tgZ7LQ==
 
-pino@^8.6.0:
-  version "8.6.0"
-  resolved "https://registry.yarnpkg.com/pino/-/pino-8.6.0.tgz#b82132965b1549d617b02b7d4e29da7c68ae0361"
-  integrity sha512-gCEOs6XpgiM8mSFjiLXQejDJ1PZww8AUmHowQ16QpqpXQDIm3mFwn/29+Y6CJxd6i+x3uXduuerjq+IqWoABbA==
+pino@^8.8.0:
+  version "8.8.0"
+  resolved "https://registry.yarnpkg.com/pino/-/pino-8.8.0.tgz#1f0d6695a224aa06afc7ad60f2ccc4772d3b9233"
+  integrity sha512-cF8iGYeu2ODg2gIwgAHcPrtR63ILJz3f7gkogaHC/TXVVXxZgInmNYiIpDYEwgEkxZti2Se6P2W2DxlBIZe6eQ==
   dependencies:
     atomic-sleep "^1.0.0"
     fast-redact "^3.1.1"
@@ -2857,10 +2857,10 @@ resolve@^1.0.0, resolve@^1.20.0:
     path-parse "^1.0.7"
     supports-preserve-symlinks-flag "^1.0.0"
 
-rich-domain@^1.14.0:
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/rich-domain/-/rich-domain-1.14.0.tgz#60325d2ae5f4f5e7c6dba02af9ee462bcc3eae5a"
-  integrity sha512-GmPFRlSTm1vz03ZdTLfRpvVpMnGQJrlBIjRiLdi9S4mOUZ1cyTm/uWOpBOourlk6ozK+o+pSEaYcQC2eV2ZKHQ==
+rich-domain@^1.15.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/rich-domain/-/rich-domain-1.15.0.tgz#229ee46ba73a37903a5c16441c7ae665d362ce37"
+  integrity sha512-nOTnqL9ONSKdKnaifv3XYqXyunhlov12O7KaDjwpINLsKlXVjEANG6S4zboO62rUUXBZHT3BOz8crlIimCqlCw==
 
 rimraf@^2.6.1:
   version "2.7.1"
@@ -3307,20 +3307,20 @@ type-is@~1.6.18:
     media-typer "0.3.0"
     mime-types "~2.1.24"
 
-types-ddd@^3.1.0:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/types-ddd/-/types-ddd-3.2.1.tgz#32fa1fdfb7e9908330b5722e8ed97bd880ca9918"
-  integrity sha512-I4M5Lkqt8Pl18gheY5RNIQ4nLJj/gJc76X7fQ8kZjC+pAt97bJW8EpGgYqtSH/lpBVKRPyjZYNrMr1g/rOcgiQ==
+types-ddd@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/types-ddd/-/types-ddd-3.4.0.tgz#f83ed3bd7715a080b0f447dbd9c4a01b834ebe22"
+  integrity sha512-gI7tNPh9bBWVobZ0TX4FerttjMTtVEWtedsxxWjtqG9M+x2yJSgrlWR2MP9G7VbdSrmu2i93jnXtLyX+uR/mDA==
   dependencies:
     bcrypt "^5.0.1"
-    pino "^8.6.0"
-    pino-pretty "^9.0.0"
-    rich-domain "^1.14.0"
+    pino "^8.8.0"
+    pino-pretty "^9.1.1"
+    rich-domain "^1.15.0"
 
-typescript@^4.7.4:
-  version "4.8.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.8.3.tgz#d59344522c4bc464a65a730ac695007fdb66dd88"
-  integrity sha512-goMHfm00nWPa8UvR/CPSvykqf6dVV8x/dp0c5mFTMTIu0u0FlGWRioyy7Nn0PGAdHxpJZnuO/ut+PpQ8UiHAig==
+typescript@^4.9.4:
+  version "4.9.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.4.tgz#a2a3d2756c079abda241d75f149df9d561091e78"
+  integrity sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==
 
 unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"

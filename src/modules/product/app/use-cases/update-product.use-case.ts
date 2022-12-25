@@ -31,7 +31,7 @@ export class UpdateProductUseCase implements IUseCase<UpdateProductDto, Result<v
 
 			const name = data.next().value() as ProductName;
 			const price = data.next().value() as ProductPrice;
-				
+
 			product.set('name').to(name);
 			product.set('price').to(price);
 

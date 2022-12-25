@@ -1,12 +1,12 @@
 import ProductToDomainAdapter from "../product-to-domain.adapter";
-import { ProductDb } from "../repository.interface";
+import { ProductModel } from "../repository.interface";
 
 describe('adapter', () => {
 
 	const adapter = new ProductToDomainAdapter();
 	const date = new Date('2022-01-01 01:00:00')
 	
-	const data: ProductDb = {
+	const data: ProductModel = {
 		id: 'valid_id',
 		name: 'valid_name',
 		price: 200,

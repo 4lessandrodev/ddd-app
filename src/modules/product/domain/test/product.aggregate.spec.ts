@@ -41,6 +41,21 @@ describe('product.aggregate', () => {
 		expect(dateUpdate1).not.toBe(dateUpdate2);
 	});
 
+	it('should change price with success', () => {
+		const product = Product.create({ name, price }).value();
+		const newPrice = ProductPrice.create({ value: 200 }).value();
+
+		expect(product.get('price').get('value')).toBe(42);
+
+		product.change('price', newPrice);
+		expect(product.get('price').get('value')).toBe(200);
+
+		const newPrice2 = ProductPrice.create({ value: 121 }).value();
+		product.set('price').to(newPrice2);
+
+		expect(product.get('price').get('value')).toBe(121);
+	});
+
 	it('should create a product with provided id', () => {
 		const id = ID.create();
 

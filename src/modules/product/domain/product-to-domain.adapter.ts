@@ -2,10 +2,10 @@ import { Class, IAdapter, ID, IResult, Result, ValueObject } from "types-ddd";
 import ProductName, { NameProps } from "./product-name.value-object";
 import ProductPrice, { PriceProps } from "./product-price.value-object";
 import Product from "./product.aggregate";
-import { ProductDb } from "./repository.interface";
+import { ProductModel } from "./repository.interface";
 
-export class ProductToDomainAdapter implements IAdapter<ProductDb, Product>{
-	build(target: ProductDb): IResult<Product> {
+export class ProductToDomainAdapter implements IAdapter<ProductModel, Product>{
+	build(target: ProductModel): IResult<Product> {
 		const { result, data } = ValueObject.createMany([
 			Class<NameProps>(ProductName, { value: target.name }),
 			Class<PriceProps>(ProductPrice, { value: target.price })
