@@ -9,7 +9,7 @@ export const ProductController = {
 		return res.json({ products });
 	}),
 
-	GetProductById: route.post('/products', async (req: Request, res: Response) => {
+	CreateProduct: route.post('/products', async (req: Request, res: Response) => {
 		const { name = '', price = 0 } = req.body;
 		const result = await createProductUseCase.execute({ name: name, price: price });
 		return res.json({ success: result.isOk(), message: result.error() });

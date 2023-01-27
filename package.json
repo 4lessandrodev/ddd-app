@@ -12,11 +12,11 @@
     "start": "node ./dist/src/main"
   },
   "dependencies": {
-    "body-parser": "^1.20.0",
-    "express": "^4.18.1",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "module-alias": "^2.2.2",
     "reflect-metadata": "^0.1.13",
-    "types-ddd": "^3.4.0"
+    "types-ddd": "^3.5.1"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
