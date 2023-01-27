@@ -31,20 +31,6 @@ describe('create-product.use-case', () => {
 		expect(saveSpy).not.toHaveBeenCalled();
 	});
 
-	it('should return fails if repository throws', async () => {
-
-		jest.spyOn(productRepositoryMock, 'create')
-			.mockImplementationOnce(async () => {
-			throw new Error("something went wrong");
-		});
-		
-		const dto: CreateProductDto = { name: 'valid value', price: 10 };
-		
-		const result = await useCase.execute(dto);
-		expect(result.isFail()).toBeTruthy();
-		expect(result.error()).toBe('something went wrong');
-	});
-
 	it('should create a product with success', async () => {
 
 		const saveSpy = jest.spyOn(productRepositoryMock, 'create');

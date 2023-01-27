@@ -12,36 +12,33 @@ export interface UpdateProductDto {
 
 export class UpdateProductUseCase implements IUseCase<UpdateProductDto, Result<void>>{
 
-	constructor(private readonly repo: ProductRepositoryInterface){}
+	constructor(private readonly repo: ProductRepositoryInterface) { }
 
 	async execute(dto: UpdateProductDto): Promise<Result<void>> {
-		try {
-			const productFound = await this.repo.getProductById(dto.id);
 
-			if (!productFound) return Result.fail('Product not found');
+		const productFound = await this.repo.getProductById(dto.id);
 
-			const product = productFound;
+		if (!productFound) return Result.fail('Product not found');
 
-			const { result, data } = ValueObject.createMany([
-				Class<NameProps>(ProductName, { value: dto.name }),
-				Class<PriceProps>(ProductPrice, { value: dto.price })
-			]);
-			
-			if (result.isFail()) return Result.fail(result.error());
+		const product = productFound;
 
-			const name = data.next().value() as ProductName;
-			const price = data.next().value() as ProductPrice;
+		const { result, data } = ValueObject.createMany([
+			Class<NameProps>(ProductName, { value: dto.name }),
+			Class<PriceProps>(ProductPrice, { value: dto.price })
+		]);
 
-			product.set('name').to(name);
-			product.set('price').to(price);
+		if (result.isFail()) return Result.fail(result.error());
 
-			await this.repo.update(product);
+		const name = data.next().value() as ProductName;
+		const price = data.next().value() as ProductPrice;
 
-			return Result.Ok();
+		product.set('name').to(name);
+		product.set('price').to(price);
 
-		} catch (error: any) {
-			return Result.fail(error.message);
-		}
+		await this.repo.update(product);
+
+		return Result.Ok();
+
 	}
 }
 

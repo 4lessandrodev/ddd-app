@@ -40,36 +40,6 @@ describe('update-product.use-case', () => {
 		expect(saveSpy).not.toHaveBeenCalled();
 	});
 
-	it('should return fails if repository throws', async () => {
-		const adapter = new ProductToDomainAdapter();
-		const date = new Date('2022-01-01 01:00:00')
-		
-		const data: ProductModel = {
-			id: 'valid_id',
-			name: 'valid_name',
-			price: 200,
-			createdAt: date,
-			updatedAt: date,
-		};
-
-		const build = adapter.build(data);
-
-		const product = build.value();
-
-		jest.spyOn(productRepositoryMock, 'getProductById').mockResolvedValueOnce(product);
-
-		jest.spyOn(productRepositoryMock, 'update')
-			.mockImplementationOnce(async () => {
-			throw new Error("something went wrong");
-		});
-
-		const dto: UpdateProductDto = { id: 'valid', name: 'valid value', price: 10 };
-		
-		const result = await useCase.execute(dto);
-		expect(result.isFail()).toBeTruthy();
-		expect(result.error()).toBe('something went wrong');
-	});
-
 	it('should update a product with success', async () => {
 		const adapter = new ProductToDomainAdapter();
 		const date = new Date('2022-01-01 01:00:00')

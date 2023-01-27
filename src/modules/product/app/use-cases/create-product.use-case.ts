@@ -18,31 +18,24 @@ export class CreateProductUseCase implements IUseCase<CreateProductDto, Result<v
 	) { }
 
 	async execute(dto: CreateProductDto): Promise<Result<void>> {
-		try {
 
-			const { data, result } = ValueObject.createMany([
-				Class<PriceProps>(ProductPrice, { value: dto.price }),
-				Class<NameProps>(ProductName, { value: dto.name })
-			])
+		const { data, result } = ValueObject.createMany([
+			Class<PriceProps>(ProductPrice, { value: dto.price }),
+			Class<NameProps>(ProductName, { value: dto.name })
+		])
 
-			if (result.isFail()) return Result.fail(result.error());
+		if (result.isFail()) return Result.fail(result.error());
 
-			const price = data.next().value() as ProductPrice;
-			const name = data.next().value() as ProductName;
+		const price = data.next().value() as ProductPrice;
+		const name = data.next().value() as ProductName;
 
-			const product = Product.create({ name, price }).value();
+		const product = Product.create({ name, price }).value();
 
-			product.addEvent(this.event);
-			
-			await this.repo.create(product);
+		product.addEvent(this.event);
 
-			return Result.Ok();
-						
-		} catch (error: any) {
+		await this.repo.create(product);
 
-			return Result.fail(error.message);
-
-		}
+		return Result.Ok();
 	}
 }
 
