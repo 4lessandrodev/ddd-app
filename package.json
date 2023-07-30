@@ -12,24 +12,24 @@
     "start": "node ./dist/src/main"
   },
   "dependencies": {
-    "body-parser": "^1.20.1",
+    "body-parser": "^1.20.2",
     "express": "^4.18.2",
-    "module-alias": "^2.2.2",
+    "module-alias": "^2.2.3",
     "reflect-metadata": "^0.1.13",
     "types-ddd": "^3.6.2"
   },
   "devDependencies": {
-    "@types/express": "^4.17.13",
+    "@types/express": "^4.17.17",
     "@types/jest": "^28.1.6",
-    "@types/node": "^18.6.4",
+    "@types/node": "^18.17.1",
     "@types/supertest": "^2.0.12",
     "jest": "^28.1.3",
     "supertest": "^6.2.4",
     "ts-jest": "^28.0.7",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
-    "tsconfig-paths": "^4.1.0",
-    "typescript": "^4.9.4"
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^4.9.5"
   },
   "_moduleAliases": {
     "@types": "./dist/types/index",
