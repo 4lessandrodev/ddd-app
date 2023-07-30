@@ -66,15 +66,16 @@ describe('product.aggregate', () => {
 
 	it('should add event to product with success', () => {
 		
-		expect(DomainEvents.events.total()).toBe(0);
-		
 		const product = Product.create({ name, price }).value();
+		expect(product.eventsMetrics.total).toBe(0);
+		expect(product.eventsMetrics.dispatch).toBe(0);
+		
 		product.addEvent(new ProductCreatedEvent());
 
-		expect(DomainEvents.events.total()).toBe(1);
+		expect(product.eventsMetrics.total).toBe(1);
 
-		DomainEvents.dispatch({ id: product.id, eventName: 'ProductCreated' });
-
-		expect(DomainEvents.events.total()).toBe(0);
+		product.dispatchEvent('ProductCreated');
+		expect(product.eventsMetrics.dispatch).toBe(1);
+		expect(product.eventsMetrics.total).toBe(1);
 	});
 });
