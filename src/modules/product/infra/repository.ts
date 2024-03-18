@@ -1,6 +1,6 @@
 import Product from "@product/domain/product.aggregate";
 import ProductRepositoryInterface from "@product/domain/repository.interface";
-import { DomainEvents, IAdapter } from "types-ddd";
+import { IAdapter } from "types-ddd";
 import ProductModel from "./product.model";
 
 export class ProductRepository implements ProductRepositoryInterface{
@@ -18,7 +18,7 @@ export class ProductRepository implements ProductRepositoryInterface{
 
 	async create(product: Product): Promise<void> {
 		this.db.push(product.toObject());
-		DomainEvents.dispatch({ eventName: 'ProductCreated', id: product.id });
+		product.dispatchEvent('ProductCreated');
 	}
 
 	async getProducts(): Promise<ProductModel[]> {

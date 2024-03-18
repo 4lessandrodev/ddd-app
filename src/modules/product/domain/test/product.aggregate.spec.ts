@@ -1,4 +1,4 @@
-import { DomainEvents, ID } from "types-ddd";
+import { ID } from "types-ddd";
 import ProductCreatedEvent from "../product-created.event";
 import ProductName from "../product-name.value-object";
 import ProductPrice from "../product-price.value-object";

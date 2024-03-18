@@ -1,4 +1,4 @@
-import { IUseCase, IHandle } from "rich-domain/types";
+import { IUseCase, EventHandler } from "rich-domain/types";
 import { Class, Result, ValueObject } from "types-ddd";
 import ProductName, { NameProps } from "@product/domain/product-name.value-object";
 import Product from "@product/domain/product.aggregate";
@@ -14,7 +14,7 @@ export class CreateProductUseCase implements IUseCase<CreateProductDto, Result<v
 
 	constructor(
 		private readonly repo: ProductRepositoryInterface,
-		private readonly event: IHandle<Product>
+		private readonly event: EventHandler<Product>
 	) { }
 
 	async execute(dto: CreateProductDto): Promise<Result<void>> {

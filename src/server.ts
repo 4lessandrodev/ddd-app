@@ -41,4 +41,3 @@ export class Server {
 
 	private static instance: IExpress;
 }
-

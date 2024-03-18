@@ -1,16 +1,16 @@
-import { IDomainEvent } from "rich-domain/types";
-import { IHandle } from "types-ddd";
+import { EventHandler } from "types-ddd";
 import Product from "./product.aggregate";
 
-export class ProductCreatedEvent implements IHandle<Product>{
-	public eventName: string;
+export class ProductCreatedEvent extends EventHandler<Product>{
 
 	constructor() { 
-		this.eventName = 'ProductCreated';
+		super({ eventName: 'ProductCreated' });
 	}
 	
-	dispatch(event: IDomainEvent<Product>): void {
-		console.log(`EVENT DISPATCH: ${event.aggregate.hashCode().value()}`);
+	dispatch(aggregate: Product): void {
+		const model = aggregate.toObject();
+		console.log(`EVENT DISPATCH: ${aggregate.hashCode().value()}`);
+		console.log(model);
 	}
 }
 
