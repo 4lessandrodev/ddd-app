@@ -31,6 +31,7 @@ export class ProductRepository implements ProductRepositoryInterface{
 		if (!exists) return;
 		this.db.splice(index, 1);
 		this.db.push(product.toObject());
+		product.dispatchAll();
 	}
 }
 

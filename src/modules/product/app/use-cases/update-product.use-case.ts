@@ -35,6 +35,11 @@ export class UpdateProductUseCase implements IUseCase<UpdateProductDto, Result<v
 		product.set('name').to(name);
 		product.set('price').to(price);
 
+		product.addEvent('productChanged', (item) => {
+			console.log(`EVENT DISPATCH: ${item.hashCode().value()}`);
+			console.log(item.toObject());
+		});
+
 		await this.repo.update(product);
 
 		return Result.Ok();
