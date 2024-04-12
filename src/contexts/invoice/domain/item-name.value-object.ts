@@ -1,4 +1,4 @@
-import { IResult, Result, ValueObject } from "rich-domain";
+import { IResult, Result, ValueObject } from "types-ddd";
 
 export interface NameProps {
 	value: string;

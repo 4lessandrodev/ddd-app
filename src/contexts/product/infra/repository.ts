@@ -1,6 +1,6 @@
 import Product from "src/contexts/product/domain/product.aggregate";
 import ProductRepositoryInterface from "src/contexts/product/domain/repository.interface";
-import { IAdapter } from "rich-domain";
+import { IAdapter } from "types-ddd";
 import ProductModel from "./product.model";
 
 export class ProductRepository implements ProductRepositoryInterface{

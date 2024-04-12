@@ -1,4 +1,4 @@
-import { Class, IAdapter, IResult, Id, Result, ValueObject } from "rich-domain";
+import { Class, IAdapter, IResult, Id, Result, ValueObject } from "types-ddd";
 import ItemName, { NameProps } from "./item-name.value-object";
 import Amount, { PriceProps } from "./amount.value-object";
 import Invoice from "./invoice.aggregate";

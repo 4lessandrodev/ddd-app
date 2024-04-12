@@ -1,4 +1,4 @@
-import { Fail, IResult, Result, ValueObject } from "rich-domain";
+import { Fail, IResult, Result, ValueObject } from "types-ddd";
 
 export interface PriceProps {
 	value: number;

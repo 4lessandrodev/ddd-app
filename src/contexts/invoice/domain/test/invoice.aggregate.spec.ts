@@ -1,4 +1,4 @@
-import { ID } from "rich-domain";
+import { ID } from "types-ddd";
 import InvoiceCreatedEvent from "../invoice-created.event";
 import ItemName from "../item-name.value-object";
 import Amount from "../amount.value-object";

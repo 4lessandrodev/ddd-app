@@ -1,8 +1,8 @@
 import ProductName, { NameProps } from "@product/domain/product-name.value-object";
 import ProductPrice, { PriceProps } from "@product/domain/product-price.value-object";
 import RepositoryInterface from "@product/domain/repository.interface";
-import { IUseCase } from "rich-domain/types";
-import { Class, Result, ValueObject } from "rich-domain";
+import { IUseCase } from "types-ddd";
+import { Class, Result, ValueObject } from "types-ddd";
 
 export interface UpdateProductDto {
 	id: string;
