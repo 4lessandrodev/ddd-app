@@ -1,4 +1,4 @@
-import ProductCreatedEvent from "@product/domain/product-created.event";
+﻿import ProductCreatedEvent from "@product/domain/product-created.event";
 import CreateProductUseCase, { CreateProductDto } from "../create-product.use-case";
 import productRepositoryMock from "./product-repository.mock";
 
