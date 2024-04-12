@@ -1,4 +1,4 @@
-import { IUseCase, EventHandler } from "rich-domain/types";
+import { IUseCase } from "rich-domain/types";
 import { Class, Result, ValueObject } from "rich-domain";
 import ProductName, { NameProps } from "@product/domain/product-name.value-object";
 import Product from "@product/domain/product.aggregate";
@@ -13,8 +13,7 @@ export interface CreateProductDto {
 export class CreateProductUseCase implements IUseCase<CreateProductDto, Result<void>>{
 
 	constructor(
-		private readonly repo: ProductRepositoryInterface,
-		private readonly event: EventHandler<Product>
+		private readonly repo: ProductRepositoryInterface
 	) { }
 
 	async execute(dto: CreateProductDto): Promise<Result<void>> {
@@ -30,8 +29,6 @@ export class CreateProductUseCase implements IUseCase<CreateProductDto, Result<v
 		const name = data.next().value() as ProductName;
 
 		const product = Product.create({ name, price }).value();
-
-		product.addEvent(this.event);
 
 		await this.repo.create(product);
 

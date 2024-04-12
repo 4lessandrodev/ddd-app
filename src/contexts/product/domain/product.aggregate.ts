@@ -1,6 +1,7 @@
 import { Aggregate, Ok, Result, UID } from "rich-domain";
 import ProductName from "./product-name.value-object";
 import ProductPrice from "./product-price.value-object";
+import ProductCreatedEvent from "./product-created.event";
 
 export interface ProductProps {
 	id?: UID;
@@ -25,7 +26,9 @@ export class Product extends Aggregate<ProductProps> {
 	}
 
 	public static create(props: ProductProps): Result<Product> {
-		return Ok(new Product(props));
+		const product = new Product(props);
+		if (product.isNew()) product.addEvent(new ProductCreatedEvent());
+		return Ok(product);
 	}
 }
 

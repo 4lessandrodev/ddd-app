@@ -67,7 +67,7 @@ describe('product.aggregate', () => {
 	it('should add event to product with success', () => {
 
 		const product = Product.create({ name, price }).value();
-		expect(product.eventsMetrics.total).toBe(0);
+		expect(product.eventsMetrics.total).toBe(1);
 		expect(product.eventsMetrics.dispatch).toBe(0);
 
 		product.addEvent(new ProductCreatedEvent());
@@ -85,7 +85,7 @@ describe('product.aggregate', () => {
 		const newPrice = ProductPrice.create({ value: 200 }).value();
 		product.update(newName, newPrice);
 		const model = product.toObject();
-		expect(product.eventsMetrics.total).toBe(1);
+		expect(product.eventsMetrics.total).toBe(2);
 		expect(model).toEqual(
 			{
 				"createdAt": expect.any(Date),

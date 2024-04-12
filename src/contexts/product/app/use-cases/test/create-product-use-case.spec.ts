@@ -5,7 +5,7 @@ import productRepositoryMock from "./product-repository.mock";
 describe('create-product.use-case', () => {
 
 	const event = new ProductCreatedEvent();
-	const useCase = new CreateProductUseCase(productRepositoryMock, event);
+	const useCase = new CreateProductUseCase(productRepositoryMock);
 
 	it('should return fails if provide an invalid name value', async () => {
 
