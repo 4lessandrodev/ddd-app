@@ -2882,6 +2882,11 @@ resolve@^1.0.0, resolve@^1.20.0:
     path-parse "^1.0.7"
     supports-preserve-symlinks-flag "^1.0.0"
 
+rich-domain@1.20.3-beta.1:
+  version "1.20.3-beta.1"
+  resolved "https://registry.yarnpkg.com/rich-domain/-/rich-domain-1.20.3-beta.1.tgz#b5a99d707996d30c0adb15d9b08f48c52bf3f3c6"
+  integrity sha512-0Brptrz3iiUf6TM3tdW1YZABevQCSbhJ7H88w8XpAahW8SgmbYS9dtAkY/pxLB05flrBCqJTOeTNE7b2fBYIbA==
+
 rich-domain@^1.20.3:
   version "1.20.3"
   resolved "https://registry.yarnpkg.com/rich-domain/-/rich-domain-1.20.3.tgz#3939787379d73e00ddc284e180136a3e1261c8a2"

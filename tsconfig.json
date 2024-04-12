@@ -15,7 +15,8 @@
     "outDir": "dist",
     "paths": {
       "@types": ["./src/types/index"],
-      "@product/*": ["./src/modules/product/*"]
+      "@product/*": ["./src/contexts/product/*"],
+      "@invoice/*": ["./src/contexts/invoice/*"]
     }
   }
 }

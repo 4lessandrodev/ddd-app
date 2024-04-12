@@ -11,7 +11,8 @@ export default {
   testEnvironment: 'node',
   testRegex: [".+\\.spec\\.ts$"],
   moduleNameMapper: {
-		'@product/(.*)': '<rootDir>/modules/product/$1',
+		'@product/(.*)': '<rootDir>/contexts/product/$1',
+    '@invoice/(.*)': '<rootDir>/contexts/invoice/$1',
 		'@types': '<rootDir>/types/index',
 	},
 };

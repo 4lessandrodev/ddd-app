@@ -64,3 +64,11 @@ http://localhost:3000/products/:id | jq '.'
 
 
 ```
+
+```sh
+
+# List Invoices
+
+$ curl http://localhost:3000/invoices | jq '.'
+
+```

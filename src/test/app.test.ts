@@ -1,17 +1,16 @@
 import supertest from 'supertest';
 
 describe('app.test', () => {
-	const url = '/products';
 	const host = '127.0.0.1:3000';
 	let id = '';
 
 	it('should create a product with success', async () => {
-		const result = await supertest(host).post(url).send({ name: 'valid', price: 21 });
+		const result = await supertest(host).post('/products').send({ name: 'valid', price: 21 });
 		expect(result.status).toBe(200);
 	});
 
 	it('should get product with success', async () => {
-		const result = await supertest(host).get(url);
+		const result = await supertest(host).get('/products');
 		expect(result.status).toBe(200);
 
 		id = result.body.products[0].id;
@@ -21,14 +20,20 @@ describe('app.test', () => {
 	});
 
 	it('should update first product', async () => {
-		const result = await supertest(host).put(`${url}/${id}`).send({ name: 'changed', price: 42 });
+		const result = await supertest(host).put(`/products/${id}`).send({ name: 'changed', price: 42 });
 		expect(result.status).toBe(200);
 	});
 
 	it('should get first product updated', async () => {
-		const result = await supertest(host).get(url);
+		const result = await supertest(host).get('/products');
 		expect(result.status).toBe(200);
 		expect(result.body.products[0].name).toBe('changed');
 		expect(result.body.products[0].price).toBe(42);
+	});
+
+	it('should list invoices', async () => {
+		const result = await supertest(host).get(`/invoices`)
+		expect(result.status).toBe(200);
+		expect(result.body.invoices).toHaveLength(1);
 	});
 });
