@@ -10,7 +10,7 @@ export class InvoiceCreatedEvent extends EventHandler<Invoice>{
 	dispatch(aggregate: Invoice): void {
 		const model = aggregate.toObject();
 		console.log(`EVENT DISPATCH: GENERATE INVOICE`);
-		console.log(model);
+		aggregate.context().dispatchEvent('PrintInvoice', model);
 	}
 }
 
