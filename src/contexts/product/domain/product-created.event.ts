@@ -14,7 +14,7 @@ export class ProductCreatedEvent extends EventHandler<Product>{
 		console.log(`EVENT DISPATCH: PRODUCT CREATED`);
 		console.log(model);
 		// dispatch event to invoice context
-		aggregate.context().dispatchEvent('GenerateInvoice', { itemName, amount });
+		aggregate.context().dispatchEvent('Invoice:GenerateInvoice', { itemName, amount });
 	}
 }
 

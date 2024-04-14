@@ -13,13 +13,13 @@ export const listInvoicesUseCase = new ListInvoicesUseCase(repository);
 const createInvoiceUseCase = new CreateInvoiceUseCase(repository);
 
 // subscribe to product created context
-context.subscribe('GenerateInvoice', (args) => {
+context.subscribe('Invoice:GenerateInvoice', (args) => {
     const [dto] = args.detail;
     createInvoiceUseCase.execute(dto);
 });
 
 // infra subscribe to domain
-context.subscribe('PrintInvoice', (args) => {
+context.subscribe('Invoice:PrintInvoice', (args) => {
     const [model] = args.detail;
     console.log(generateInvoice(model.itemName, model.amount));
 });
