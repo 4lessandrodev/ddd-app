@@ -32,8 +32,8 @@ describe('invoice.aggregate', () => {
 		const invoice = result.value();
 		const obj = invoice.toObject();
 		expect(Object.keys(obj)).toEqual(['id', 'createdAt', 'updatedAt', 'itemName', 'amount']);
-		expect(obj.itemName).toBe('valid name');
-		expect(obj.amount).toBe(42);
+		expect(obj.itemName.value).toBe('valid name');
+		expect(obj.amount.value).toBe(42);
 		expect(obj.id).toBeDefined();
 		expect(obj.createdAt).toBeDefined();
 		expect(obj.updatedAt).toBeDefined();

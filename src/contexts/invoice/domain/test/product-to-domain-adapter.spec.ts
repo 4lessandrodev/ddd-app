@@ -8,8 +8,8 @@ describe('adapter', () => {
 	
 	const data: InvoiceModel = {
 		id: 'valid_id',
-		itemName: 'valid_name',
-		amount: 200,
+		itemName: { value: 'valid_name' },
+		amount: { value: 200 },
 		createdAt: date,
 		updatedAt: date,
 	};
@@ -23,7 +23,7 @@ describe('adapter', () => {
 	});
 
 	it('should fails if provide an invalid value', () => {
-		const build = adapter.build({ ...data, amount: -10 });
+		const build = adapter.build({ ...data, amount: { value: -10 } });
 		expect(build.isFail()).toBeTruthy();
 	});
 });

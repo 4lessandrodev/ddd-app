@@ -46,8 +46,8 @@ describe('update-product.use-case', () => {
 		
 		const data: ProductModel = {
 			id: 'valid_id',
-			name: 'valid_name',
-			price: 200,
+			name: { value: 'valid_name'},
+			price: { value: 200 },
 			createdAt: date,
 			updatedAt: date,
 		};

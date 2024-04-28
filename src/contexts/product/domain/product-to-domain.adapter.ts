@@ -7,8 +7,8 @@ import { ProductModel } from "./repository.interface";
 export class ProductToDomainAdapter implements IAdapter<ProductModel, Product>{
 	build(target: ProductModel): IResult<Product> {
 		const { result, data } = ValueObject.createMany([
-			Class<NameProps>(ProductName, { value: target.name }),
-			Class<PriceProps>(ProductPrice, { value: target.price })
+			Class<NameProps>(ProductName, { value: target.name.value }),
+			Class<PriceProps>(ProductPrice, { value: target.price.value })
 		]);
 
 		if (result.isFail()) return Result.fail(result.error());

@@ -2,8 +2,8 @@ import { ProductModel as Model } from "src/contexts/product/domain/repository.in
 
 export class ProductModel implements Model {
 	id!: string;
-	name!: string;
-	price!: number;
+	name!: { value: string };
+	price!: { value: number };
 	createdAt!: Date;
 	updatedAt!: Date;
 }
