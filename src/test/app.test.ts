@@ -15,8 +15,8 @@ describe('app.test', () => {
 
 		id = result.body.products[0].id;
 
-		expect(result.body.products[0].name).toBe('valid');
-		expect(result.body.products[0].price).toBe(21);
+		expect(result.body.products[0].name.value).toBe('valid');
+		expect(result.body.products[0].price.value).toBe(21);
 	});
 
 	it('should update first product', async () => {
@@ -27,8 +27,8 @@ describe('app.test', () => {
 	it('should get first product updated', async () => {
 		const result = await supertest(host).get('/products');
 		expect(result.status).toBe(200);
-		expect(result.body.products[0].name).toBe('changed');
-		expect(result.body.products[0].price).toBe(42);
+		expect(result.body.products[0].name.value).toBe('changed');
+		expect(result.body.products[0].price.value).toBe(42);
 	});
 
 	it('should list invoices', async () => {

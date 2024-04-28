@@ -19,8 +19,8 @@ describe('product.aggregate', () => {
 		const product = result.value();
 		const obj = product.toObject();
 		expect(Object.keys(obj)).toEqual(['id', 'createdAt', 'updatedAt', 'name', 'price']);
-		expect(obj.name).toBe('valid name');
-		expect(obj.price).toBe(42);
+		expect(obj.name.value).toBe('valid name');
+		expect(obj.price.value).toBe(42);
 		expect(obj.id).toBeDefined();
 		expect(obj.createdAt).toBeDefined();
 		expect(obj.updatedAt).toBeDefined();
@@ -90,8 +90,8 @@ describe('product.aggregate', () => {
 			{
 				"createdAt": expect.any(Date),
 				"id": expect.any(String),
-				"name": "new name",
-				"price": 200,
+				"name": { "value": "new name" },
+				"price": { "value": 200 },
 				"updatedAt": expect.any(Date),
 			}
 		);

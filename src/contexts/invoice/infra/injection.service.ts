@@ -21,5 +21,5 @@ context.subscribe('Invoice:GenerateInvoice', (args) => {
 // infra subscribe to domain
 context.subscribe('Invoice:PrintInvoice', (args) => {
     const [model] = args.detail;
-    console.log(generateInvoice(model.itemName, model.amount));
+    console.log(generateInvoice(model.itemName.value, model.amount.value));
 });

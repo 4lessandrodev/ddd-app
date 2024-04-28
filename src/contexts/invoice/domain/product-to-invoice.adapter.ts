@@ -7,8 +7,8 @@ import { InvoiceModel } from "./repository.interface";
 export class ProductToInvoiceAdapter implements IAdapter<InvoiceModel, Invoice>{
 	build(target: InvoiceModel): IResult<Invoice> {
 		const { result, data } = ValueObject.createMany([
-			Class<NameProps>(ItemName, { value: target.itemName }),
-			Class<PriceProps>(Amount, { value: target.amount })
+			Class<NameProps>(ItemName, { value: target.itemName.value }),
+			Class<PriceProps>(Amount, { value: target.amount.value })
 		]);
 
 		if (result.isFail()) return Result.fail(result.error());

@@ -2882,10 +2882,10 @@ resolve@^1.0.0, resolve@^1.20.0:
     path-parse "^1.0.7"
     supports-preserve-symlinks-flag "^1.0.0"
 
-rich-domain@^1.22.0:
-  version "1.22.0"
-  resolved "https://registry.yarnpkg.com/rich-domain/-/rich-domain-1.22.0.tgz#cc191e5600038ac37b8bc656570cd4cc93edcd60"
-  integrity sha512-LHCkQjc0WbUVDyRiY9bhraKvVlwqNV99aN36qo5mY2Y2B1nE9spDcLBhCaIakyJBKZk1yLhoLxn4+JivTemwBQ==
+rich-domain@^1.23.0:
+  version "1.23.0"
+  resolved "https://registry.yarnpkg.com/rich-domain/-/rich-domain-1.23.0.tgz#50f527fc2a8dd660de3d08c97e990f695f70703d"
+  integrity sha512-Tfo18xWIdYNH1z8/gZA6PEj/WGucchCwfQpwdkk2QHNeYTTy4CWLWeh6ENB3b/wQFevMgRkiVpZAuPwHZWGfNg==
 
 rimraf@^2.6.1:
   version "2.7.1"
@@ -3357,15 +3357,15 @@ type-is@~1.6.18:
     media-typer "0.3.0"
     mime-types "~2.1.24"
 
-types-ddd@^3.8.3:
-  version "3.8.3"
-  resolved "https://registry.yarnpkg.com/types-ddd/-/types-ddd-3.8.3.tgz#876a825b267ea1756bf1f7bf66b56f8c61f6ff54"
-  integrity sha512-dAT7zW4J9qvfowH/FSu+a22xRm46NYhvEc5vCH0LPvcW4dRFUdZbPLOV7fDAVSQWKi2bu+mJx7KV5GQscsmISg==
+types-ddd@^3.9.0:
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/types-ddd/-/types-ddd-3.9.0.tgz#c0cbefebdd293df266a5f56ce29a931be46e13fd"
+  integrity sha512-K7FjubVeTl3b0YeBi+xURLvNYRJ2sSmzl+pLDcOP2JrXEG3k2WPzRie/WJLnUWeYiHD1VfHsiXGis0HDaAhefg==
   dependencies:
     bcrypt "^5.0.1"
     pino "^8.17.1"
     pino-pretty "^11.0.0"
-    rich-domain "^1.22.0"
+    rich-domain "^1.23.0"
 
 typescript@^4.9.5:
   version "4.9.5"

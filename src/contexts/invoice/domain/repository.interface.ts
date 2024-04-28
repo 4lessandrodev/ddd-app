@@ -2,8 +2,8 @@ import Invoice from "./invoice.aggregate";
 
 export class InvoiceModel {
 	id!: string;
-	itemName!: string;
-	amount!: number;
+	itemName!: { value: string };
+	amount!: { value: number };
 	createdAt!: Date;
 	updatedAt!: Date;
 }

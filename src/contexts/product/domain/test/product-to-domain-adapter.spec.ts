@@ -5,16 +5,15 @@ describe('adapter', () => {
 
 	const adapter = new ProductToDomainAdapter();
 	const date = new Date('2022-01-01 01:00:00')
-	
+
 	const data: ProductModel = {
 		id: 'valid_id',
-		name: 'valid_name',
-		price: 200,
+		name: { value: 'valid_name' },
+		price: { value: 200 },
 		createdAt: date,
 		updatedAt: date,
 	};
 
-	
 	it('should create a domain from a model', () => {
 		const build = adapter.build(data);
 		const product = build.value();
@@ -23,7 +22,7 @@ describe('adapter', () => {
 	});
 
 	it('should fails if provide an invalid value', () => {
-		const build = adapter.build({ ...data, price: -10 });
+		const build = adapter.build({ ...data, price: { value: -10 } });
 		expect(build.isFail()).toBeTruthy();
 	});
 });

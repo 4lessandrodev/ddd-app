@@ -2,8 +2,8 @@ import Product from "./product.aggregate";
 
 export class ProductModel {
 	id!: string;
-	name!: string;
-	price!: number;
+	name!: { value: string};
+	price!: { value: number };
 	createdAt!: Date;
 	updatedAt!: Date;
 }

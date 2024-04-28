@@ -6,7 +6,7 @@ export interface PriceProps {
 
 export class ProductPrice extends ValueObject<PriceProps>{
 	private constructor(props: PriceProps) {
-		super(props, { disableSetters: true });
+		super(props);
 	}
 
 	public static isValidProps({ value }: PriceProps): boolean {

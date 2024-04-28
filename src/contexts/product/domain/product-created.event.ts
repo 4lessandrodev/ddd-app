@@ -9,8 +9,8 @@ export class ProductCreatedEvent extends EventHandler<Product>{
 	
 	dispatch(aggregate: Product): void {
 		const model = aggregate.toObject();
-		const amount = model.price;
-		const itemName = model.name;
+		const amount = model.price.value;
+		const itemName = model.name.value;
 		console.log(`EVENT DISPATCH: PRODUCT CREATED`);
 		console.log(model);
 		// dispatch event to invoice context
