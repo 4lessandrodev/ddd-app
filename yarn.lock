@@ -2887,6 +2887,11 @@ rich-domain@^1.23.0:
   resolved "https://registry.yarnpkg.com/rich-domain/-/rich-domain-1.23.0.tgz#50f527fc2a8dd660de3d08c97e990f695f70703d"
   integrity sha512-Tfo18xWIdYNH1z8/gZA6PEj/WGucchCwfQpwdkk2QHNeYTTy4CWLWeh6ENB3b/wQFevMgRkiVpZAuPwHZWGfNg==
 
+rich-domain@^1.23.1:
+  version "1.23.1"
+  resolved "https://registry.yarnpkg.com/rich-domain/-/rich-domain-1.23.1.tgz#80dfc93aada0178a109fac65e311007d422ce0f2"
+  integrity sha512-Uzx16bXRH954j8WPnfEj40v6qdXLKzoIdikIa9Fa6VCQVEcUMchfZfqmDj56ZI5BtAwbrRKE57eA41sbRo6lIQ==
+
 rimraf@^2.6.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.7.1.tgz#35797f13a7fdadc566142c29d4f07ccad483e3ec"
