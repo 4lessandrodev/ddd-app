@@ -3365,10 +3365,10 @@ type-is@~1.6.18:
     media-typer "0.3.0"
     mime-types "~2.1.24"
 
-types-ddd@^3.9.1:
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/types-ddd/-/types-ddd-3.9.1.tgz#4eee2c0754213183e8b447cdcaee48fe616d2e2b"
-  integrity sha512-3saRwNr71gCKnvle3+iOXjW4nDHp4ukKJ8JBjoFktd2Ajo5ZNzCWtArTGkiiC5EGZfIbH/rp6G2GC8c+EtYvPQ==
+types-ddd@^3.9.2:
+  version "3.9.2"
+  resolved "https://registry.yarnpkg.com/types-ddd/-/types-ddd-3.9.2.tgz#c1011f12accd2af8ffe042f299d52614ade1e6c7"
+  integrity sha512-gJuryOq/B5+6lfTy6QgMeWuySUGtn9wufpzyW7w5ORmUtJldoTUbRz77bwDEYcNt6eL/xhu5ISCDJ7EH25j10g==
   dependencies:
     bcrypt "^5.0.1"
     pino "^9.0.0"
