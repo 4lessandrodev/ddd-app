@@ -10,7 +10,7 @@ describe('item-name', () => {
 	});
 
 	it('should get value with success', () => {
-		expect(itemName.get("value")).toBe('some valid description');
+		expect(itemName?.get("value")).toBe('some valid description');
 	});
 
 	it('should return fails if provide an invalid name', () => {

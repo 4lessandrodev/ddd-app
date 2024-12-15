@@ -1,4 +1,4 @@
-import { EventHandler } from "types-ddd";
+import { EventHandler } from "rich-domain";
 import Invoice from "./invoice.aggregate";
 
 export class InvoiceCreatedEvent extends EventHandler<Invoice>{

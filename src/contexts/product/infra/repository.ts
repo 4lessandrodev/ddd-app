@@ -1,18 +1,18 @@
 import Product from "src/contexts/product/domain/product.aggregate";
 import ProductRepositoryInterface from "src/contexts/product/domain/repository.interface";
-import { IAdapter } from "types-ddd";
+import { Adapter } from "rich-domain";
 import ProductModel from "./product.model";
 
 export class ProductRepository implements ProductRepositoryInterface{
 	constructor(
-		private readonly adapter: IAdapter<ProductModel, Product>,
+		private readonly adapter: Adapter<ProductModel, Product>,
 		private readonly db: Array<ProductModel>
 	) { }
 	
 	async getProductById(id: string): Promise<Product | null> {
 		const product = this.db.find((pd) => pd.id === id);
 		if (!product) return null;
-		const adaptedProduct = this.adapter.build(product).value();
+		const adaptedProduct = this.adapter.adaptOne(product);
 		return adaptedProduct;
 	}
 

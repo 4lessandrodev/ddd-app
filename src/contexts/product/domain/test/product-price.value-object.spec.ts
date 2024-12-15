@@ -10,7 +10,7 @@ describe('product-price', () => {
 	});
 
 	it('should get value with success', () => {
-		expect(productPrice.get("value")).toBe(10);
+		expect(productPrice?.get("value")).toBe(10);
 	});
 
 

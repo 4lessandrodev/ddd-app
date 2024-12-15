@@ -10,12 +10,12 @@ describe('product-name', () => {
 	});
 
 	it('should get value with success', () => {
-		expect(productName.get("value")).toBe('some valid description');
+		expect(productName?.get("value")).toBe('some valid description');
 	});
 
 	it('should change product name with success', () => {
-		const newName = productName.clone({ value: 'new name' });
-		expect(newName.get("value")).toBe('new name');
+		const newName = productName?.clone({ value: 'new name' });
+		expect(newName?.get("value")).toBe('new name');
 	});
 
 	it('should return fails if provide an invalid name', () => {

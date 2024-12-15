@@ -1,5 +1,5 @@
 import RepositoryInterface, { InvoiceModel } from "@invoice/domain/repository.interface";
-import { IUseCase } from "types-ddd";
+import { IUseCase } from "rich-domain";
 
 export class ListInvoicesUseCase implements IUseCase<void, InvoiceModel[]> {
 	constructor(private readonly repo: RepositoryInterface) { }

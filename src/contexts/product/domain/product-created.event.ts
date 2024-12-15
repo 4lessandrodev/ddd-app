@@ -1,4 +1,4 @@
-import { EventHandler } from "types-ddd";
+import { EventHandler } from "rich-domain";
 import Product from "./product.aggregate";
 
 export class ProductCreatedEvent extends EventHandler<Product>{

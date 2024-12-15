@@ -1,4 +1,4 @@
-import { Aggregate, Ok, Result, UID } from "types-ddd";
+import { Aggregate, Ok, Result, UID } from "rich-domain";
 import ProductName from "./product-name.value-object";
 import ProductPrice from "./product-price.value-object";
 import ProductCreatedEvent from "./product-created.event";

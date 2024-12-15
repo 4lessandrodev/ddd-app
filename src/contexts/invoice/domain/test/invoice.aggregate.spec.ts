@@ -1,4 +1,4 @@
-import { ID } from "types-ddd";
+import { ID } from "rich-domain";
 import InvoiceCreatedEvent from "../invoice-created.event";
 import ItemName from "../item-name.value-object";
 import Amount from "../amount.value-object";
@@ -6,8 +6,8 @@ import Invoice from "../invoice.aggregate";
 
 describe('invoice.aggregate', () => {
 
-	const itemName = ItemName.create({ value: 'valid name' }).value();
-	const amount = Amount.create({ value: 42 }).value();
+	const itemName = ItemName.create({ value: 'valid name' }).value() as ItemName;
+	const amount = Amount.create({ value: 42 }).value() as Amount;
 
 	it('should add event to invoice with success', () => {
 		
@@ -41,7 +41,7 @@ describe('invoice.aggregate', () => {
 
 	it('should change name with success', () => {
 		const invoice = Invoice.create({ itemName, amount }).value();
-		const newName = ItemName.create({ value: 'new name' }).value();
+		const newName = ItemName.create({ value: 'new name' }).value() as ItemName;
 
 		const dateUpdate1 = invoice.get('updatedAt');
 
@@ -56,14 +56,14 @@ describe('invoice.aggregate', () => {
 
 	it('should change amount with success', () => {
 		const invoice = Invoice.create({ itemName, amount }).value();
-		const newAmount = Amount.create({ value: 200 }).value();
+		const newAmount = Amount.create({ value: 200 }).value() as Amount;
 
 		expect(invoice.get('amount').get('value')).toBe(42);
 
 		invoice.change('amount', newAmount);
 		expect(invoice.get('amount').get('value')).toBe(200);
 
-		const newAmount2 = Amount.create({ value: 121 }).value();
+		const newAmount2 = Amount.create({ value: 121 }).value() as Amount;
 		invoice.set('amount').to(newAmount2);
 
 		expect(invoice.get('amount').get('value')).toBe(121);

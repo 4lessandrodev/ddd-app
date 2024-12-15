@@ -1,5 +1,5 @@
 import RepositoryInterface, { ProductModel } from "@product/domain/repository.interface";
-import { IUseCase } from "types-ddd";
+import { IUseCase } from "rich-domain";
 
 export class ListProductsUseCase implements IUseCase<void, ProductModel[]> {
 	constructor(private readonly repo: RepositoryInterface) { }

@@ -1,4 +1,4 @@
-import { Fail, IResult, Result, ValueObject } from "types-ddd";
+import { Fail, Result, ValueObject } from "rich-domain";
 
 export interface PriceProps {
 	value: number;
@@ -14,7 +14,7 @@ export class Amount extends ValueObject<PriceProps>{
 		return number(value).isPositive();
 	}
 
-	public static create(props: PriceProps): IResult<Amount> {
+	public static create(props: PriceProps): Result<Amount | null> {
 		const message = 'value must be positive';
 
 		if (!this.isValidProps(props)) return Fail(message);

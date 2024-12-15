@@ -16,14 +16,12 @@ describe('adapter', () => {
 
 	
 	it('should create a domain from a model', () => {
-		const build = adapter.build(data);
-		const product = build.value();
-		expect(build.isOk()).toBeTruthy();
+		const product = adapter.adaptOne(data);
 		expect(product.toObject()).toEqual(data);
 	});
 
 	it('should fails if provide an invalid value', () => {
-		const build = adapter.build({ ...data, amount: { value: -10 } });
-		expect(build.isFail()).toBeTruthy();
+		const build = () => adapter.adaptOne({ ...data, amount: { value: -10 } });
+		expect(build).toThrow();
 	});
 });

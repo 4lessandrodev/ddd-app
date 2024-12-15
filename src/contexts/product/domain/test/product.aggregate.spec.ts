@@ -1,4 +1,4 @@
-import { ID } from "types-ddd";
+import { ID } from "rich-domain";
 import ProductCreatedEvent from "../product-created.event";
 import ProductName from "../product-name.value-object";
 import ProductPrice from "../product-price.value-object";
@@ -6,8 +6,8 @@ import Product from "../product.aggregate";
 
 describe('product.aggregate', () => {
 
-	const name = ProductName.create({ value: 'valid name' }).value();
-	const price = ProductPrice.create({ value: 42 }).value();
+	const name = ProductName.create({ value: 'valid name' }).value() as ProductName;
+	const price = ProductPrice.create({ value: 42 }).value() as ProductPrice;
 
 	it('should create a valid product with success', () => {
 		const result = Product.create({ name, price });
@@ -28,7 +28,7 @@ describe('product.aggregate', () => {
 
 	it('should change name with success', () => {
 		const product = Product.create({ name, price }).value();
-		const newName = ProductName.create({ value: 'new name' }).value();
+		const newName = ProductName.create({ value: 'new name' }).value() as ProductName;
 
 		const dateUpdate1 = product.get('updatedAt');
 
@@ -43,14 +43,14 @@ describe('product.aggregate', () => {
 
 	it('should change price with success', () => {
 		const product = Product.create({ name, price }).value();
-		const newPrice = ProductPrice.create({ value: 200 }).value();
+		const newPrice = ProductPrice.create({ value: 200 }).value() as ProductPrice;
 
 		expect(product.get('price').get('value')).toBe(42);
 
 		product.change('price', newPrice);
 		expect(product.get('price').get('value')).toBe(200);
 
-		const newPrice2 = ProductPrice.create({ value: 121 }).value();
+		const newPrice2 = ProductPrice.create({ value: 121 }).value() as ProductPrice;
 		product.set('price').to(newPrice2);
 
 		expect(product.get('price').get('value')).toBe(121);
@@ -81,8 +81,8 @@ describe('product.aggregate', () => {
 
 	it('should update name and price with success', () => {
 		const product = Product.create({ name, price }).value();
-		const newName = ProductName.create({ value: 'new name' }).value();
-		const newPrice = ProductPrice.create({ value: 200 }).value();
+		const newName = ProductName.create({ value: 'new name' }).value() as ProductName;
+		const newPrice = ProductPrice.create({ value: 200 }).value() as ProductPrice;
 		product.update(newName, newPrice);
 		const model = product.toObject();
 		expect(product.eventsMetrics.total).toBe(2);

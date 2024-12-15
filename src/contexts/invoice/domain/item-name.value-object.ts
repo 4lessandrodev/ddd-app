@@ -1,4 +1,4 @@
-import { IResult, Result, ValueObject } from "types-ddd";
+import { Result, ValueObject } from "rich-domain";
 
 export interface NameProps {
 	value: string;
@@ -18,7 +18,7 @@ export class ItemName extends ValueObject<NameProps>{
 		return string(value).hasLengthBetweenOrEqual(3, 30);
 	}
 
-	public static create(props: NameProps): IResult<ItemName> {
+	public static create(props: NameProps): Result<ItemName | null> {
 		const message = 'value must have length min 3 and max 30 char';
 
 		if (!this.isValidProps(props)) return Result.fail(message);

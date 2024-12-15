@@ -2,7 +2,7 @@ import ListInvoicesUseCase from '@invoice/app/use-cases/list-invoices.use-case';
 import InvoiceModel from './invoice.model';
 import InvoiceRepository from './repository';
 import CreateInvoiceUseCase from '@invoice/app/use-cases/create-invoice.use-case';
-import { Context } from 'types-ddd';
+import { Context } from 'rich-domain';
 import generateInvoice from './generate-invoice.service';
 
 const context = Context.events();

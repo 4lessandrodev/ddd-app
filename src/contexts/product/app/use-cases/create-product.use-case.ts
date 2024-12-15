@@ -1,5 +1,5 @@
-import { IUseCase } from "types-ddd";
-import { Class, Result, ValueObject } from "types-ddd";
+import { IUseCase } from "rich-domain";
+import { Class, Result, ValueObject } from "rich-domain";
 import ProductName, { NameProps } from "@product/domain/product-name.value-object";
 import Product from "@product/domain/product.aggregate";
 import ProductPrice, { PriceProps } from "@product/domain/product-price.value-object";

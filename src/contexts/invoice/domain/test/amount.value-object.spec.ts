@@ -10,7 +10,7 @@ describe('amount', () => {
 	});
 
 	it('should get value with success', () => {
-		expect(amount.get("value")).toBe(10);
+		expect(amount?.get("value")).toBe(10);
 	});
 
 	it('should return fails if provide an invalid amount', () => {

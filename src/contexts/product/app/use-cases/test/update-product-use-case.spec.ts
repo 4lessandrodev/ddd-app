@@ -52,9 +52,7 @@ describe('update-product.use-case', () => {
 			updatedAt: date,
 		};
 
-		const build = adapter.build(data);
-
-		const product = build.value();
+		const product = adapter.adaptOne(data);
 
 		jest.spyOn(productRepositoryMock, 'getProductById').mockResolvedValueOnce(product);
 		const updateSpy = jest.spyOn(productRepositoryMock, 'update');
