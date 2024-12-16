@@ -1,4 +1,4 @@
-import { Fail, Result, ValueObject } from "rich-domain";
+import { Fail, Ok, Result, ValueObject } from "rich-domain";
 
 export interface PriceProps {
 	value: number;
@@ -19,7 +19,7 @@ export class Amount extends ValueObject<PriceProps>{
 
 		if (!this.isValidProps(props)) return Fail(message);
 
-		return Result.Ok(new Amount(props));
+		return Ok(new Amount(props));
 	}
 }
 

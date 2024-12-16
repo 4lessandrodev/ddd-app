@@ -1,4 +1,4 @@
-import { IUseCase } from "rich-domain";
+import { Fail, IUseCase, Ok } from "rich-domain";
 import { Class, Result, ValueObject } from "rich-domain";
 import ProductName, { NameProps } from "@product/domain/product-name.value-object";
 import Product from "@product/domain/product.aggregate";
@@ -23,7 +23,7 @@ export class CreateProductUseCase implements IUseCase<CreateProductDto, Result<v
 			Class<NameProps>(ProductName, { value: dto.name })
 		])
 
-		if (result.isFail()) return Result.fail(result.error());
+		if (result.isFail()) return Fail(result.error());
 
 		const price = data.next().value() as ProductPrice;
 		const name = data.next().value() as ProductName;
@@ -32,7 +32,7 @@ export class CreateProductUseCase implements IUseCase<CreateProductDto, Result<v
 
 		await this.repo.create(product);
 
-		return Result.Ok();
+		return Ok();
 	}
 }
 
